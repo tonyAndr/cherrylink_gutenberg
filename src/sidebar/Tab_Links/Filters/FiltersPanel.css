@@ -1,0 +1,33 @@
+.cherry-filters-toggles {
+    display: flex;
+    flex-flow: nowrap row;
+}
+
+.cherry-filters-toggles > div {
+    flex-grow: 1;
+}
+
+.filter-terms-container {
+    border: 1px solid lightslategrey; 
+    border-radius: 5px;
+}
+
+.subheader {
+    font-size: 13px;
+    color: #7d8186;
+    margin-bottom: 0.5em;
+    margin-top: 1.0em;
+    font-weight: bold;
+}
+
+.term-checkbox-child {
+    margin-left: 10px;
+}
+.term-checkbox-toplvl {
+    margin-left: 0;
+}
+.filter-terms-container {
+    padding: 5px;
+    height: 200px;
+    overflow: auto;
+}

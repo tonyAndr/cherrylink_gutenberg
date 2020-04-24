@@ -1,0 +1,53 @@
+.suggestion-panel {
+    display: block;
+    /* position: absolute; */
+    background: white;
+    width: 100%;
+    height: 100%;
+    /* z-index: 99; */
+}
+.suggestion-panel button {
+    margin: 10px;
+    display: block;
+    border: none;
+    background: #007cba;
+    color: white;
+    cursor: pointer;    
+    border-radius: 3px;
+    padding: 8px;
+}
+/* .suggestion-panel button:before {
+    background-image: url(/wp-content/plugins/cherrylink/assets/gutenberg/tab-links.png);
+    background-size: 15px, 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+    width: 25px;
+    height: 20px;
+    content: "";
+} */
+.suggestion-block {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid grey;
+    border-radius: 3px;
+}
+.suggestion-block:hover {
+    cursor: pointer;
+    background: rgb(206, 215, 255);
+}
+.suggestion-block .block-name {
+    background: aliceblue;
+    border-bottom: 1px solid rgb(182, 182, 182);
+    font-weight: bold;
+}
+.suggestion-list li:nth-child(odd) {
+    background: #fff0fb;
+}
+.suggestion-list li:nth-child(even) {
+    background: cornsilk;
+}
+.suggestion-hint {
+    margin: 10px;
+}
+
