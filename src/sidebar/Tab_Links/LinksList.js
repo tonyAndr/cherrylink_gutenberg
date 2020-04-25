@@ -2,6 +2,7 @@ import React from 'react';
 import './LinksToolbar.css';
 import LinkItem from './LinkItem';
 import withPostMeta from '../HOC/withPostMeta';
+import { showNotice } from '../Notices';
 
 class LinksList extends React.Component {
     constructor(props) {
@@ -83,7 +84,15 @@ class LinksList extends React.Component {
     }
 
     render () {
-        const { filters, data, stats, showSuggestions, convertUrl } = this.props;
+        const { filters, data, stats, showSuggestions, convertUrl, dataStatus } = this.props;
+
+        if (dataStatus === 3) {
+            console.log('dataStatus = 3 in linksList');
+            return (
+                <p className='links-not-found'>Ничего не удалось найти. Попробуйте изменить настройки <a href={window.location.origin + "/wp-admin/options-general.php?page=linkate-posts"}>фильтрации или релевантности</a>.</p>
+            )
+        }
+
 
         const editUrl = `${window.location.origin}/wp-admin/post.php`;
         let links = [];

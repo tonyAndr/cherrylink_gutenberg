@@ -133,7 +133,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".link-item-container {\r\n    position: relative;\r\n    height: 70px;\r\n    padding: 5px;\r\n    border-bottom: 1px solid lightgrey;\r\n}\r\n.link-item-container:nth-child(odd) {\r\n    /* border-left: 3px solid rgb(199, 199, 199); */\r\n    background: #f3f4f5;\r\n}\r\n/* .link-item-container:nth-child(even) {\r\n    border-left: 3px solid rgb(168, 168, 168);\r\n} */\r\n.link-item-container > span  {\r\n    display: block;\r\n    overflow: hidden;\r\n    max-height: 60px;\r\n    line-height: 20px;\r\n}\r\n\r\n.link-item-container.inArticle {\r\n    border-left: 3px solid rgb(218, 92, 92);\r\n}\r\n\r\n.link-toolbar-overlay {\r\n    position: absolute;\r\n    padding: 3px;\r\n    top: 0;\r\n    left: 0;\r\n    right: 0;\r\n    bottom: 0;\r\n    display: grid;\r\n    grid-template-columns: repeat(2, 1fr);\r\n    grid-template-rows: repeat(2, 1fr);\r\n    grid-column-gap: 0px;\r\n    grid-row-gap: 0px;\r\n    opacity: 0.05;\r\n    background: #00000000;\r\n    -webkit-transition: all 0.3s ease-in-out;\r\n    -moz-transition: all 0.3s ease-in-out;\r\n    -ms-transition: all 0.3s ease-in-out;\r\n    -o-transition: all 0.3s ease-in-out;\r\n    transition: all 0.3s ease-in-out;\r\n}\r\n\r\n.link-toolbar-overlay:hover {\r\n    opacity: 1;\r\n    background: #ffffff96;\r\n    cursor: pointer;\r\n}\r\n\r\n.toolbar-actions { \r\n    grid-area: 2 / 1 / 3 / 2; \r\n}\r\n.toolbar-article { \r\n    grid-area: 1 / 2 / 2 / 3; \r\n    justify-self: end;\r\n}\r\n.toolbar-stats { \r\n    grid-area: 2 / 2 / 3 / 3; \r\n    justify-self: end;\r\n}\r\n\r\n.toolbar-actions > div,\r\n.toolbar-article > div, \r\n.toolbar-stats > div {\r\n    border: 1px dashed #007cba;\r\n    width: 26px;\r\n    height: 26px;\r\n    background: #ffffffa6;\r\n    border-radius: 5px;\r\n    display: inline-block;\r\n    margin: 1px;\r\n}\r\n.toolbar-actions > div:hover,\r\n.toolbar-article > div:hover {\r\n    border: 2px solid #007cba;\r\n    cursor: pointer;\r\n}\r\n\r\n.toolbar-stats > div {\r\n    width: auto;\r\n    line-height: 26px;\r\n    font-weight: 600;\r\n    text-align: center;\r\n    display: flex;\r\n    flex-wrap: nowrap;\r\n    flex-direction: row;\r\n    align-content: stretch;\r\n    align-items: stretch;\r\n}\r\n.toolbar-stats > div > div {\r\n    min-width: 25px;\r\n    padding-right: 3px;\r\n}\r\n/*incoming*/\r\n.toolbar-stats > div > div:last-child {\r\n    background: #9bd0ff;\r\n}\r\n/*outgoing*/\r\n.toolbar-stats > div > div:first-child {\r\n    background: #ffb1b1;\r\n}\r\n\r\n\r\n", ""]);
+exports.push([module.i, ".link-item-container {\r\n    position: relative;\r\n    height: 70px;\r\n    padding: 5px;\r\n    border-bottom: 1px solid lightgrey;\r\n}\r\n.link-item-container:nth-child(odd) {\r\n    /* border-left: 3px solid rgb(199, 199, 199); */\r\n    background: #f3f4f5;\r\n}\r\n/* .link-item-container:nth-child(even) {\r\n    border-left: 3px solid rgb(168, 168, 168);\r\n} */\r\n.link-item-container > span  {\r\n    display: block;\r\n    overflow: hidden;\r\n    max-height: 60px;\r\n    line-height: 20px;\r\n}\r\n\r\n.link-item-container.inArticle {\r\n    border-left: 3px solid rgb(218, 92, 92);\r\n}\r\n\r\n.link-toolbar-overlay {\r\n    position: absolute;\r\n    padding: 3px;\r\n    top: 0;\r\n    left: 0;\r\n    right: 0;\r\n    bottom: 0;\r\n    display: grid;\r\n    grid-template-columns: repeat(2, 1fr);\r\n    grid-template-rows: repeat(2, 1fr);\r\n    grid-column-gap: 0px;\r\n    grid-row-gap: 0px;\r\n    opacity: 0.05;\r\n    background: #00000000;\r\n    -webkit-transition: all 0.3s ease-in-out;\r\n    -moz-transition: all 0.3s ease-in-out;\r\n    -ms-transition: all 0.3s ease-in-out;\r\n    -o-transition: all 0.3s ease-in-out;\r\n    transition: all 0.3s ease-in-out;\r\n}\r\n\r\n.link-toolbar-overlay:hover {\r\n    opacity: 1;\r\n    background: #ffffff96;\r\n    cursor: pointer;\r\n}\r\n\r\n.toolbar-actions { \r\n    grid-area: 2 / 1 / 3 / 2; \r\n}\r\n.toolbar-article { \r\n    grid-area: 1 / 2 / 2 / 3; \r\n    justify-self: end;\r\n}\r\n.toolbar-stats { \r\n    grid-area: 2 / 2 / 3 / 3; \r\n    justify-self: end;\r\n}\r\n\r\n.toolbar-actions > div,\r\n.toolbar-article > div, \r\n.toolbar-stats > div {\r\n    border: 1px dashed #007cba;\r\n    width: 26px;\r\n    height: 26px;\r\n    background: #ffffffa6;\r\n    border-radius: 5px;\r\n    display: inline-block;\r\n    margin: 1px;\r\n}\r\n.toolbar-actions > div:hover,\r\n.toolbar-article > div:hover {\r\n    border: 2px solid #007cba;\r\n    cursor: pointer;\r\n}\r\n\r\n.toolbar-stats > div {\r\n    width: auto;\r\n    line-height: 26px;\r\n    font-weight: 600;\r\n    text-align: center;\r\n    display: flex;\r\n    flex-wrap: nowrap;\r\n    flex-direction: row;\r\n    align-content: stretch;\r\n    align-items: stretch;\r\n}\r\n.toolbar-stats > div > div {\r\n    min-width: 25px;\r\n    padding-right: 3px;\r\n}\r\n/*incoming*/\r\n.toolbar-stats > div > div:last-child {\r\n    background: #9bd0ff;\r\n}\r\n/*outgoing*/\r\n.toolbar-stats > div > div:first-child {\r\n    background: #ffb1b1;\r\n}\r\n\r\n.links-not-found{\r\n    padding: 15px 15px 0;\r\n}\r\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -8105,8 +8105,11 @@ var GetData = /*#__PURE__*/function (_React$Component) {
       }).then(function (response) {
         return response.json();
       }).then(function (response) {
-        newData.data = newData.data.concat(JSON.parse(response.links));
-        newData.dataOffset = newData.dataOffset + response.count; //dataStatus 0: first render; 1: success; 2: end reached; 3: not found
+        if (response.count > -1) {
+          newData.data = newData.data.concat(JSON.parse(response.links));
+          newData.dataOffset = newData.dataOffset + response.count;
+        } //dataStatus 0: first render; 1: success; 2: end reached; 3: not found
+
 
         if (response.count > 0 && response.count === newData.loadLimit) {
           newData.dataStatus = 1;
@@ -10486,6 +10489,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _LinksToolbar_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_LinksToolbar_css__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _LinkItem__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./LinkItem */ "./src/sidebar/Tab_Links/LinkItem.js");
 /* harmony import */ var _HOC_withPostMeta__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../HOC/withPostMeta */ "./src/sidebar/HOC/withPostMeta.js");
+/* harmony import */ var _Notices__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Notices */ "./src/sidebar/Notices.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -10503,6 +10507,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -10615,7 +10620,18 @@ var LinksList = /*#__PURE__*/function (_React$Component) {
           data = _this$props.data,
           stats = _this$props.stats,
           showSuggestions = _this$props.showSuggestions,
-          convertUrl = _this$props.convertUrl;
+          convertUrl = _this$props.convertUrl,
+          dataStatus = _this$props.dataStatus;
+
+      if (dataStatus === 3) {
+        console.log('dataStatus = 3 in linksList');
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          className: "links-not-found"
+        }, "\u041D\u0438\u0447\u0435\u0433\u043E \u043D\u0435 \u0443\u0434\u0430\u043B\u043E\u0441\u044C \u043D\u0430\u0439\u0442\u0438. \u041F\u043E\u043F\u0440\u043E\u0431\u0443\u0439\u0442\u0435 \u0438\u0437\u043C\u0435\u043D\u0438\u0442\u044C \u043D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0438 ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          href: window.location.origin + "/wp-admin/options-general.php?page=linkate-posts"
+        }, "\u0444\u0438\u043B\u044C\u0442\u0440\u0430\u0446\u0438\u0438 \u0438\u043B\u0438 \u0440\u0435\u043B\u0435\u0432\u0430\u043D\u0442\u043D\u043E\u0441\u0442\u0438"), ".");
+      }
+
       var editUrl = "".concat(window.location.origin, "/wp-admin/post.php");
       var links = [];
 
@@ -11486,6 +11502,7 @@ var CherryLinkSidebar = /*#__PURE__*/function (_React$Component) {
           handleFiltersUpdate: this.updateCurrentFilters
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Tab_Links_LinksList__WEBPACK_IMPORTED_MODULE_6__["default"], {
           data: this.state.currentData.data,
+          dataStatus: this.state.currentData.dataStatus,
           scrollPos: this.state.scrollPos,
           updateScrollPos: this.updateScrollPos,
           filters: this.state.currentFilters,

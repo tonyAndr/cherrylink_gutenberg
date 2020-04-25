@@ -43,8 +43,10 @@ export class GetData extends React.Component {
         })
             .then(response => response.json())
             .then(response => {
-                newData.data = newData.data.concat(JSON.parse(response.links));
-                newData.dataOffset = newData.dataOffset + response.count;
+                if (response.count > -1) {
+                    newData.data = newData.data.concat(JSON.parse(response.links));
+                    newData.dataOffset = newData.dataOffset + response.count;
+                }
 
                 //dataStatus 0: first render; 1: success; 2: end reached; 3: not found
                 if (response.count > 0 && response.count === newData.loadLimit) {

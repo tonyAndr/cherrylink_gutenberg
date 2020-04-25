@@ -156,6 +156,7 @@ class CherryLinkSidebar extends React.Component {
                                 handleDataUpdate={this.updateLinksData}
                                 handleFiltersUpdate={this.updateCurrentFilters} />
                             <LinksList data={this.state.currentData.data}
+                                dataStatus={this.state.currentData.dataStatus}
                                 scrollPos={this.state.scrollPos}
                                 updateScrollPos={this.updateScrollPos}
                                 filters={this.state.currentFilters}
