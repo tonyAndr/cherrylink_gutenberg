@@ -14,4 +14,6 @@ class SuggestionInsert extends Component {
     }
 }
 // SuggestionInsert.contextType = NoticeContext;
+
+SuggestionInsert.fullName = "SuggestionInsert";
 export default LinkWithInsertAction(SuggestionInsert);

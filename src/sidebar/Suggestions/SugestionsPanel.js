@@ -57,7 +57,7 @@ export class SuggestionsPanel extends React.Component {
             // let set = [];
             for (let j = 0; j < keysLen; j++) {
                 if (j !== i) {
-                    setOfPairsRegexes.push(new RegExp(`(?<=^|\\s)(${x}[^\\n\\.,\\(\\)\\[\\]]*?${keywords[j]}[А-ЯЁA-Z]*)`, 'gmiu'));
+                    setOfPairsRegexes.push(new RegExp(`(?:^|\\s)(${x}[^\\n\\.,\\(\\)\\[\\]]*?${keywords[j]}[А-ЯЁA-Z]*)`, 'gmiu'));
                 }
             }
         })

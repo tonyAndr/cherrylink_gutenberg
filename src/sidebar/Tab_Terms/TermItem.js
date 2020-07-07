@@ -35,4 +35,6 @@ class TermItem extends React.Component {
     }
 }
 
+TermItem.fullName = "TermItem";
+
 export default LinkWithInsertAction(TermItem);

@@ -82,4 +82,6 @@ class LinkItem extends React.Component {
     }
 }
 
+LinkItem.fullName = "LinkItem";
+
 export default LinkWithInsertAction(LinkItem);

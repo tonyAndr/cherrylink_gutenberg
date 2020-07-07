@@ -130,7 +130,7 @@ const LinkWithInsertAction = OriginalComponent => {
             let anons = "";
             let imagesrc = "";
 
-            if (OriginalComponent.name === "LinkItem" || OriginalComponent.name === "SuggestionInsert") {
+            if (OriginalComponent.fullName === "LinkItem" || OriginalComponent.fullName === "SuggestionInsert") {
                 const {linkObj} = this.props;
                 postId =  linkObj["data-postid"];
                 url = linkObj["data-url"];
@@ -208,7 +208,7 @@ const LinkWithInsertAction = OriginalComponent => {
             if (event.ctrlKey || event.metaKey) {
                 alt = true;
             }
-            if (OriginalComponent.name === 'TermItem')
+            if (OriginalComponent.fullName === 'TermItem')
                 type = 'term';
             
             let template = alt ? cherrylink_options.templates[type].alt : 
