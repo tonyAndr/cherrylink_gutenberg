@@ -30,7 +30,7 @@ export class StatsTab extends React.Component {
     // goto node if found
     scrollInto(e) {
         e.preventDefault();
-        let href = e.target.href;
+        let href = e.target.getAttribute('href');
         // let ankor = e.target.innerText;
         let ankor = parseInt(e.target.attributes["data-index"].value);
         if (!href) {
@@ -82,8 +82,12 @@ export class StatsTab extends React.Component {
         // stats
         if (stats.length > 0) {
             statsView = stats.map((x, i) => {
+                let ankor = x.keyword;
+                if (!ankor || ankor.trim().length === 0) {
+                    ankor = 'Без анкора';
+                }
                 return (<li key={i}>
-                    <a href={x.url} target="_blank" data-index={i} onClick={this.scrollInto} title="Найти в тексте">{x.keyword}</a>
+                    <a href={x.url} target="_blank" data-index={i} onClick={this.scrollInto} title="Найти в тексте">{ankor}</a>
                     <span>Ссылается на <a href={x.url} target="_blank" title="Переход по ссылке">{x.url}</a></span>
                 </li>)
             })
@@ -96,8 +100,12 @@ export class StatsTab extends React.Component {
         // incoming
         if (incoming.count > 0) {
             incomingView = incoming.links.map((x, i) => {
+                let ankor = x.ankor;
+                if (!ankor || ankor.trim().length === 0) {
+                    ankor = 'Без анкора';
+                }
                 return (<li key={i}>
-                    <span>Ссылка с анкором: <strong className="cherry-incoming-ankor">{x.ankor}</strong></span>
+                    <span>Ссылка с анкором: <strong className="cherry-incoming-ankor">{ankor}</strong></span>
                     <span>Из статьи: <a href={x.source_url} target="_blank" title="Переход по ссылке">{x.source_url}</a></span>
                 </li>)
             })
