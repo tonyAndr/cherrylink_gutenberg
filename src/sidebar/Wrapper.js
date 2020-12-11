@@ -142,7 +142,10 @@ class CherryLinkSidebar extends React.Component {
 
         if (suggestionsData) {
             // show suggestions panel if corresponding state exists
-            renderPanel = <SuggestionsPanel suggestionsData={suggestionsData} toggleSuggestionsPanel={this.updateSuggestions} />;
+            renderPanel = <SuggestionsPanel suggestionsData={suggestionsData} 
+                                    toggleSuggestionsPanel={this.updateSuggestions} 
+                                    stats={this.state.articleStats}
+                                    convertUrl={this.fcl_convertRelativeUrl} />;
         } else {
             // show tabs/links
             renderPanel =

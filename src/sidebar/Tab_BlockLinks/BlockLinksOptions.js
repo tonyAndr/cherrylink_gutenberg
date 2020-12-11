@@ -4,7 +4,7 @@ export const BlockLinksOptions = (props) => (
     <>
         <h2>Опции блока ссылок</h2>
         <CheckboxControl
-            label="Вывод блока под статьей"
+            label="Разрешить вывод блоков ссылок?"
             help="Индивидуальные настройки отображения для данной записи"
             checked={props.showAfter}
             onChange={props.updateShowAfter}

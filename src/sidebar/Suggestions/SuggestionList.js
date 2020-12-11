@@ -68,7 +68,7 @@ export class SuggestionList extends React.Component {
                 <p className="suggestion-hint"><strong>{linkItem['data-title']}</strong></p>
                 <hr />
                 <SuggestionCopy url={linkItem["data-url"]}/>
-                <SuggestionInsert linkObj={linkItem} />
+                <SuggestionInsert linkObj={linkItem} inArticle={this.props.inArticle} />
                 <p className="suggestion-hint">Нажмите на элемент в списке, чтобы выделить соответствующий блок в редакторе.</p>
                 {output}
             </>

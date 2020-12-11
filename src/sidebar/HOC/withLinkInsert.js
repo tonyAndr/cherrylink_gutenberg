@@ -31,12 +31,16 @@ const LinkWithInsertAction = OriginalComponent => {
         handleClick(e) {
             e.preventDefault();
 
-            if (e.target.classList.contains("insert-allowed")) {
-                const currentSelection = this.getSelection(e);
-                // update block
-                if (currentSelection) {
-                    let template = this.chooseTemplate(event);
-                    this.insertLink(template, currentSelection)
+            if (e.target.classList.contains("insert-allowed")) { // Этот класс проверяет что ткнули куда нужно
+                if (this.props.inArticle && cherrylink_options['multilink'] !== 'checked') { // Уже есть в тексте, проверяем мультивставку
+                    showNotice('Ссылка уже присутствует в тексте');
+                } else { // Просто вставляем ссылку
+                    const currentSelection = this.getSelection(e);
+                    // update block
+                    if (currentSelection) {
+                        let template = this.chooseTemplate(event);
+                        this.insertLink(template, currentSelection)
+                    }
                 }
             }
         }
@@ -196,7 +200,12 @@ const LinkWithInsertAction = OriginalComponent => {
             originalAttributes[curSel.attributeKey] = newContent;
             curSel.block.attributes = originalAttributes;
             dispatch('core/block-editor').updateBlock(curSel.blockId, curSel.block);
-            showNotice('Ссылка вставлена')
+            showNotice('Ссылка вставлена');
+
+            // close suggestions panel
+            if (OriginalComponent.fullName === "SuggestionInsert") {
+                document.querySelector("#cherry_suggestions_close").click();
+            }
         }
 
         chooseTemplate(event) {

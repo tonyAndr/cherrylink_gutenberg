@@ -29,6 +29,18 @@ export class SuggestionsPanel extends React.Component {
         this.closePanel = this.closePanel.bind(this);
     }
 
+    isInArticle(item, stats) {
+        let inAricle = false;
+        const convertedUrl = this.props.convertUrl(item['data-url']);
+        for (let i in stats) {
+            if (convertedUrl === stats[i].url) {
+                inAricle = true;
+                break;
+            }
+        }
+        return inAricle;
+    }
+
     stemmKeywords(rawData) {
         let words = rawData.trim().split(" ");
         const stemmer = new Snowball('Russian');
@@ -122,7 +134,7 @@ export class SuggestionsPanel extends React.Component {
     }
 
     componentDidMount() {
-        const { suggestionsData } = this.props;
+        const { suggestionsData, stats } = this.props;
 
         console.log("Raw Suggestions");
         console.log(suggestionsData.rawKeywords);
@@ -131,10 +143,12 @@ export class SuggestionsPanel extends React.Component {
         if (suggestionsData.rawKeywords) {
 
             const newState = this.searchSuggestions(suggestionsData.rawKeywords);
+            const inArticle = this.isInArticle(suggestionsData.linkItem, stats);
             if (newState)
                 this.setState({
                     suggestions: newState,
-                    linkItem: suggestionsData.linkItem
+                    linkItem: suggestionsData.linkItem,
+                    inArticle
                 });
         }
 
@@ -154,12 +168,11 @@ export class SuggestionsPanel extends React.Component {
 
     render() {
 
-
         const className = "suggestion-panel";
         return (
             <div className={className}>
-                <button onClick={this.closePanel}>🡰 Назад</button>
-                <SuggestionList {...this.state} />
+                <button id="cherry_suggestions_close" onClick={this.closePanel}>🡰 Назад</button>
+                <SuggestionList {...this.state}  />
             </div>
         )
 
