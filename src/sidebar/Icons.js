@@ -1,6 +1,6 @@
 const icons = {};
 
-icons.main = (<svg xmlns="http://www.w3.org/2000/svg" role="img" class="custom-icon custom-icon-cherrylink" width="24.013" height="24.013" viewBox="0 0 512 512">
+icons.main = (<svg xmlns="http://www.w3.org/2000/svg" role="img" className="custom-icon custom-icon-cherrylink" width="24.013" height="24.013" viewBox="0 0 512 512">
 <path d="M316.003,296.552c-52.07-57.354-41.622-144.066-19.375-218.22c9.58,12.701,20.185,21.595,20.255,21.419
 			c-10.478,26.195-0.84,56.979,24.035,72.146c25.447,15.523,94.269,8.888,123.336,6.229
 			c-10.517-26.007-36.292-91.167-61.968-106.819c-21.724-13.256-48.717-10.738-67.532,4.315

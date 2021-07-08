@@ -57,7 +57,7 @@ class BlockLinksList extends React.Component {
         let output;
         if (blockLinks !== false && blockLinks.length > 0) {
             const links = blockLinks.map((x, i) => (
-                <>
+                <div key={"blocklink_"+i}>
                     <PanelRow>
                         <Tooltip text={`Оригинальный анкор: ${x.keyword}`}>
                             <div className=''>ID: {x.post_id}</div>
@@ -72,7 +72,7 @@ class BlockLinksList extends React.Component {
                     <div>
                         {postMeta.manualEdit ? <TextControl value={x.m_keyword} onChange={(text) => this.onTyping(i, text)}></TextControl> : <Disabled><TextControl value={x.keyword}></TextControl></Disabled>}
                     </div>
-                </>
+                </div>
             ))
             output = (
                 <>

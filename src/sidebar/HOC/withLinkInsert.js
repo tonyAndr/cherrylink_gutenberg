@@ -351,7 +351,7 @@ const LinkWithInsertAction = OriginalComponent => {
         // }
 
         render() {
-            const passedProps = this.props;
+            let passedProps = Object.assign({}, this.props);
             passedProps.clickHandler = this.handleClick;
             passedProps.copyLink = this.copyLink;
             passedProps.changeBlockLinks = this.changeBlockLinks;

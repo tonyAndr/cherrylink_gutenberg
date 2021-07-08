@@ -97,13 +97,13 @@ class LinksList extends React.Component {
         const editUrl = `${window.location.origin}/wp-admin/post.php`;
         let links = [];
         if (data instanceof Array && data.length > 0) {
-            links = data.map(x => {
+            links = data.map((x, index) => {
                 // добавить фильтрацию
                 const inAricle = this.isInArticle(x, stats);
                 const isVisible = this.shouldBeShown(x, filters, inAricle);
                 if (isVisible)
                     return (
-                        <LinkItem editUrl={editUrl} linkObj={x} showSuggestions={showSuggestions} inArticle={inAricle} postMeta={this.state} convertUrl={convertUrl} onMetaChange={this.updateMetaState}/>
+                        <LinkItem key={'link_'+index} editUrl={editUrl} linkObj={x} showSuggestions={showSuggestions} inArticle={inAricle} postMeta={this.state} convertUrl={convertUrl} onMetaChange={this.updateMetaState}/>
                     )
             });
         }

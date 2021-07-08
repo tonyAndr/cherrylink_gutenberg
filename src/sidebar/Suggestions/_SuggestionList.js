@@ -30,12 +30,12 @@ export class SuggestionList extends React.Component {
                     </li>
                 )
             })
-            return (<div class="suggestion-block" onMouseDown={(e) => {
+            return (<div className="suggestion-block" onMouseDown={(e) => {
                 // e.preventDefault();
                 wp.data.dispatch("core/block-editor").selectBlock(x.clientId);
             }}>
-                <div class="block-name">{x.blockName}</div>
-                <div class="suggestion-list"><ol>{list}</ol></div>
+                <div className="block-name">{x.blockName}</div>
+                <div className="suggestion-list"><ol>{list}</ol></div>
             </div>)
         })
         if (output.length > 0) {

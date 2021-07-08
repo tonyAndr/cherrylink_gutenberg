@@ -50,13 +50,13 @@ export class SuggestionList extends React.Component {
 
         const output = (
             <>
-                {listMulti.length > 0 && (<div class="suggestion-block">
-                    <div class="block-name">Фразы</div>
-                    <div class="suggestion-list"><ol>{listMulti}</ol></div>
+                {listMulti.length > 0 && (<div className="suggestion-block">
+                    <div className="block-name">Фразы</div>
+                    <div className="suggestion-list"><ol>{listMulti}</ol></div>
                 </div>)}
-                {listSingle.length > 0 && (<div class="suggestion-block">
-                    <div class="block-name">Слова</div>
-                    <div class="suggestion-list"><ol>{listSingle}</ol></div>
+                {listSingle.length > 0 && (<div className="suggestion-block">
+                    <div className="block-name">Слова</div>
+                    <div className="suggestion-list"><ol>{listSingle}</ol></div>
                 </div>)}
             </>
         );

@@ -30,7 +30,7 @@ class TermsList extends React.Component {
                 const inArticle = this.isInArticle(termsList[i]);
                 listToRender.push(this.convertToJSX(termsList[i], false, inArticle));
             } else {
-                listToRender.push(<div className="term-divider">{termsList[i].name}</div>);
+                listToRender.push(<div key={'divider_'+i} className="term-divider">{termsList[i].name}</div>);
             }
         }
 
@@ -46,7 +46,7 @@ class TermsList extends React.Component {
                 children.push(this.convertToJSX(term.children[i], true, _inArticle));
             }
         }
-        let jsxTerm = <TermItem termName={term.name} termUrl={term.url} children={children} isChild={isChild} inArticle={inArticle} />;
+        let jsxTerm = <TermItem key={term.taxonomy + term.post_count + term.name} termName={term.name} termUrl={term.url} children={children} isChild={isChild} inArticle={inArticle} />;
 
         return jsxTerm;
     }
