@@ -2,8 +2,7 @@ import React from 'react';
 import './LinksToolbar.css';
 import LinkItem from './LinkItem';
 import withPostMeta from '../HOC/withPostMeta';
-import { showNotice } from '../Notices';
-
+import Snowball from 'snowball';
 class LinksList extends React.Component {
     constructor(props) {
         super(props);
@@ -16,6 +15,9 @@ class LinksList extends React.Component {
         };
 
         this.updateMetaState = this.updateMetaState.bind(this);
+        this.textToSetOfStemms = this.textToSetOfStemms.bind(this);
+        this.improvedFilterContains = this.improvedFilterContains.bind(this);
+        this.stemmKeywords = this.stemmKeywords.bind(this);
     }
 
     isInArticle(item, stats) {
@@ -35,8 +37,13 @@ class LinksList extends React.Component {
         
         let hasText, hasCategory, showToggles;
 
-        if (!filters.textFilter || item['data-title'].indexOf(filters.textFilter) !== -1) {
-            hasText = true;
+        // if (!filters.textFilter || item['data-title'].indexOf(filters.textFilter) !== -1) {
+        //     hasText = true;
+        // } else {
+        //     hasText = false;
+        // }
+        if (!filters.textFilter || this.improvedFilterContains(item, filters.textFilter)) {
+            hasText = true
         } else {
             hasText = false;
         }
@@ -58,6 +65,55 @@ class LinksList extends React.Component {
         return hasText && hasCategory && showToggles;
 
     }
+
+
+    // Use title, seotitle, multiple words and stemming
+    improvedFilterContains(item, filter) {
+        // combine all possible words from the link (titles + suggestion?)
+        let h1 = item["data-title"]
+        let seo = item["data-titleseo"]
+        let sugg = item["data-suggestions"]
+
+        let combine = h1;
+        if (seo) combine += ' ' + seo;
+        if (sugg) combine += ' ' + sugg;
+
+        let combinedStemms = this.textToSetOfStemms(combine);
+        let filterStemms = this.textToSetOfStemms(filter);
+
+        let contains = true;
+        filterStemms.forEach(stemm => {
+            if (!combinedStemms.includes(stemm) && combinedStemms.join(' ').indexOf(stemm) === -1) {
+                contains = false;
+            }
+        });
+        return contains;
+    }
+
+    textToSetOfStemms(text) {
+        if (!text) return [];
+        text = text.replaceAll(/[^A-ZА-Я0-9\s]/ig, '').replaceAll(/\s+/g, ' ').toLowerCase().trim().split(/\s/);
+        text = [...new Set(text)]; // removes duplicates
+        for (let i = 0; i < text.length; i++) {
+            const word = text[i];
+            text[i] = this.stemmKeywords(word);
+        }
+        text = [...new Set(text)]; // removes duplicates again
+        return text;
+    }
+
+    stemmKeywords(text) {
+        let words = text.trim().split(" ");
+        const stemmer = new Snowball('Russian');
+        words = words.map(x => {
+            stemmer.setCurrent(x);
+            stemmer.stem();
+            return stemmer.getCurrent();
+        })
+
+        return words;
+    }
+    
     updateMetaState(newState) {
         if (newState !== undefined) {
             this.props.updateMeta(newState);
@@ -84,8 +140,8 @@ class LinksList extends React.Component {
     }
 
     render () {
-        const { filters, data, stats, showSuggestions, convertUrl, dataStatus } = this.props;
-
+        const { filters, data, stats, showSuggestions, convertUrl, dataStatus, incomingLinks } = this.props;
+        
         if (dataStatus === 3) {
             console.log('dataStatus = 3 in linksList');
             return (
@@ -93,17 +149,25 @@ class LinksList extends React.Component {
             )
         }
 
-
         const editUrl = `${window.location.origin}/wp-admin/post.php`;
         let links = [];
         if (data instanceof Array && data.length > 0) {
+            let incomingReduced = [];
+            try {
+                incomingReduced = incomingLinks.links.map(x => {
+                    return x['source_id'];
+                }) 
+            } catch (err) {
+                incomingReduced = [];
+            }
             links = data.map((x, index) => {
                 // добавить фильтрацию
                 const inAricle = this.isInArticle(x, stats);
                 const isVisible = this.shouldBeShown(x, filters, inAricle);
+                const isIncoming = incomingReduced.includes(x["data-postid"]);
                 if (isVisible)
                     return (
-                        <LinkItem key={'link_'+index} editUrl={editUrl} linkObj={x} showSuggestions={showSuggestions} inArticle={inAricle} postMeta={this.state} convertUrl={convertUrl} onMetaChange={this.updateMetaState}/>
+                        <LinkItem key={'link_'+index} editUrl={editUrl} linkObj={x} showSuggestions={showSuggestions} inArticle={inAricle} isIncoming={isIncoming} postMeta={this.state} convertUrl={convertUrl} onMetaChange={this.updateMetaState}/>
                     )
             });
         }

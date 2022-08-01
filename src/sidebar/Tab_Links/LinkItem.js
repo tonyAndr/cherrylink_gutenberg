@@ -28,7 +28,7 @@ class LinkItem extends React.Component {
 
     render() {
 
-        const { linkObj, editUrl, clickHandler, copyLink, postMeta, inArticle, changeBlockLinks, onMetaChange } = this.props;
+        const { linkObj, editUrl, clickHandler, copyLink, postMeta, inArticle, changeBlockLinks, onMetaChange, isIncoming } = this.props;
         const postId = linkObj["data-postid"],
             url = linkObj["data-url"],
             title = cherrylink_options.templates.isH1 === "true" ? this.decodeHtml(linkObj["data-title"]) : this.decodeHtml(linkObj["data-titleseo"]),
@@ -48,7 +48,7 @@ class LinkItem extends React.Component {
 
         return (
             <div onMouseDown={clickHandler} className={containerClass}>
-                <span>{title}</span>
+                <span className={isIncoming ? 'incoming-link' : 'not-incoming'}>{title}</span>
                 <div className='link-toolbar-overlay  insert-allowed'>
                     <div className='toolbar-actions'>
                         <div className="insert-allowed">

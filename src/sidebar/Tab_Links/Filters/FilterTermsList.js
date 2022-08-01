@@ -50,7 +50,7 @@ export class FilterTermsList extends React.Component {
             }
         } 
         const isChecked = checkedCategories.includes(term.name) ? true : false;
-        let jsxTerm = <FilterTermItem catName={term.name} parentName={parentName} children={children} isChild={isChild} isChecked={isChecked} onChange={this.updateCheckedTerms}/>;
+        let jsxTerm = <FilterTermItem key={term.name+parentName} catName={term.name} parentName={parentName} children={children} isChild={isChild} isChecked={isChecked} onChange={this.updateCheckedTerms}/>;
 
         return jsxTerm;
     }

@@ -166,6 +166,7 @@ class CherryLinkSidebar extends React.Component {
                                 stats={this.state.articleStats}
                                 convertUrl={this.fcl_convertRelativeUrl}
                                 showSuggestions={this.updateSuggestions}
+                                incomingLinks={this.state.incomingLinks}
                                 blockLinks={this.state.blockLinks} />
                             <GetMoreBtn {...this.state.currentData } />
                         </div>
