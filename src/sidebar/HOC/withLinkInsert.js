@@ -6,7 +6,7 @@ const BlockAttributes = {
     'core/paragraph': ['content'],
     'core/pullquote': ['citation', 'value'],
     'core/heading': ['content'],
-    'core/list': ['values'],
+    'core/list-item': ['content'],
     'core/image': ['caption'],
     'core/quote': ['value', 'citation'],
     'core/gallery': ['caption'], // problem
@@ -62,6 +62,7 @@ const LinkWithInsertAction = OriginalComponent => {
             if (attributeKey === undefined || !BlockAttributes.hasOwnProperty(block.name)) {
                 showNotice('Данный тип блоков пока не поддерживается. Вы можете воспользоваться кнопкой "Скопировать ссылку" в панели перелинковки.');
                 console.log(`Block "${block.name}" isn't supported yet`);
+                console.log(block);
                 return false;
             }
 

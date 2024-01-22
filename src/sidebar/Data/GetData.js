@@ -18,7 +18,7 @@ export class GetData extends React.Component {
 
         var this_id = cherrylink_options['post_id'].length == 0 || cherrylink_options['post_id'] == 0 ? window.location.href.match(/tag_ID=(\d+)\&/i)[1] : cherrylink_options['post_id'];
         const is_term = window.location.href.indexOf('term.php') > -1 ? 1 : 0;
-        const url = ajax_var.url + '?action=getLinkateLinks'; // &post_id='+this_id+'&offset=0&is_term='+is_term
+        const url = ajax_var.url + '?action=get_linkate_links'; // &post_id='+this_id+'&offset=0&is_term='+is_term
         var payload = {
             post_id: this_id,
             offset: currentData.dataOffset,

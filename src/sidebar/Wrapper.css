@@ -59,32 +59,32 @@
     position: relative;
 }
 
-.tab-links,
-.tab-taxonomies,
-.tab-stats,
-.tab-blocklinks {
+.components-tab-panel__tabs .tab-links,
+.components-tab-panel__tabs .tab-taxonomies,
+.components-tab-panel__tabs .tab-stats,
+.components-tab-panel__tabs .tab-blocklinks {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 24px;
 }
 
-.tab-links {
+.components-tab-panel__tabs .tab-links {
     background-image: url(/wp-content/plugins/cherrylink/assets/gutenberg/tab-links.png);
 }
 
-.tab-taxonomies {
+.components-tab-panel__tabs .tab-taxonomies {
     background-image: url(/wp-content/plugins/cherrylink/assets/gutenberg/tab-taxonomies.png);
 }
 
-.tab-stats {
+.components-tab-panel__tabs .tab-stats {
     background-image: url(/wp-content/plugins/cherrylink/assets/gutenberg/tab-stats.png);
 }
 
-.tab-blocklinks {
+.components-tab-panel__tabs .tab-blocklinks {
     background-image: url(/wp-content/plugins/cherrylink/assets/gutenberg/tab-block.png);
 }
 
-.error-text {
+.components-tab-panel__tabs .error-text {
     padding: 10px;
     color: tomato;
 }
